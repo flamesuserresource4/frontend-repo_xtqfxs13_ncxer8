@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -14,38 +15,34 @@ export default {
         'ibm-plex': ['IBM Plex Sans', 'system-ui', 'sans-serif'],
         manrope: ['Manrope', 'system-ui', 'sans-serif'],
       },
+      colors: {
+        aivy: {
+          purple: '#8A2BE2',
+          blue: '#00B3FF',
+        }
+      },
+      boxShadow: {
+        glow: '0 0 30px rgba(138, 43, 226, 0.35), 0 0 60px rgba(0, 179, 255, 0.25)'
+      },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'fade-out': 'fadeOut 0.5s ease-in-out',
-        'slide-in': 'slideIn 0.3s ease-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-        'bounce-in': 'bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'fade-in': 'fadeIn 0.6s ease-out both',
+        'slide-up': 'slideUp 0.6s ease-out both',
         'spin-slow': 'spin 3s linear infinite',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeOut: {
-          '0%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        slideIn: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideUp: {
-          '0%': { transform: 'translateY(100%)' },
-          '100%': { transform: 'translateY(0)' },
-        },
-        bounceIn: {
-          '0%': { opacity: '0', transform: 'scale(0.3)' },
-          '50%': { transform: 'scale(1.05)' },
-          '70%': { transform: 'scale(0.9)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
+          '0%': { transform: 'translateY(24px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+      backgroundImage: {
+        'aivy-gradient': 'linear-gradient(135deg, rgba(138,43,226,0.12), rgba(0,179,255,0.12))',
+        'aivy-radial': 'radial-gradient(1200px 600px at 50% -10%, rgba(138,43,226,0.25), rgba(0,179,255,0.15) 40%, transparent 70%)',
+      }
     },
   },
   plugins: [],
